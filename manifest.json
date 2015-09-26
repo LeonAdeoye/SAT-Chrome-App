@@ -13,8 +13,13 @@
   },
 
   "app": {
-    "background": {
-      "scripts": ["background.js"]
-    }
+            "background": {
+                            "scripts": ["background.js"]
+                          }
+          },
+  "sockets" : {
+                "tcp" : {
+                          "connect": "api.openweathermap.org:80"
+                        }
+              }
   }
-}
