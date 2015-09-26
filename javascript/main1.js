@@ -1,8 +1,5 @@
 window.onload = function() 
 {
-  var requestFileSystem = window.webkitRequestFileSystem || window.requestFileSystem;
-  requestFileSystem(PERSISTENT, 0, haveFileSystem, errorHandler);
-  
   $('#name-id').html('Hello, Leon!');
   $('#save-me').click(function()
   {
@@ -25,6 +22,26 @@ window.onload = function()
             console.log(sendInfo);
           });
       });
+      
+      chrome.sockets.tcp.onReceive.addListener(function(info)
+      {
+        if(info.data)
+          console.log(ab2str(info.data));
+      });
+      
+      function str2ab(str)
+      {
+        var encoder = new TextEncoder('utf-8');
+        return encoder.encode(str).buffer;
+      }
+      
+      function ab2str(ab)
+      {
+        var dataView = new DataView(ab);
+        var decoder = new TextDecoder('utf-8');
+        return decoder.decode(dataView);
+      }
+      
     });
     
     
