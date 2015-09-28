@@ -5,7 +5,9 @@
   "description": "",
   "version": "0.0.1",
   "minimum_chrome_version": "38", 
-  "permissions": [ "unlimitedStorage" ],
+  "permissions": [ "unlimitedStorage"],
+  
+  "externally_connectable": { "ids": [ "eikphdjhpogaaijpmibhlmgflehinbll" ] },
 
   "icons": {
     "16": "assets/icon_16.png",

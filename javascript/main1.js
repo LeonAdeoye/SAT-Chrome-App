@@ -1,10 +1,14 @@
 window.onload = function() 
 {
   $('#name-id').html('Hello, Leon!');
+
+  $('#launch-me').click(function()
+  {
+    chrome.runtime.sendMessage("eikphdjhpogaaijpmibhlmgflehinbll", { launch: true })
+  });
+    
   $('#save-me').click(function()
   {
-    $('#save-me').toggleClass("click-colour");
-    
     var req = "GET /data/2.1/find/name?units=imperial&q=Chicago HTTP/1.1\r\n" +
     "Host: api.openweathermap.org\r\n\r\n";
     
