@@ -2,7 +2,12 @@ window.onload = function()
 {
   $('#name-id').html('Hello, Leon!');
 
-  $('#launch-me').click(function()
+  $('#img-contact-manager').click(function()
+  {
+    chrome.runtime.sendMessage("eikphdjhpogaaijpmibhlmgflehinbll", { launch: true })
+  });
+  
+  $('#img-call-list').click(function()
   {
     chrome.runtime.sendMessage("eikphdjhpogaaijpmibhlmgflehinbll", { launch: true })
   });

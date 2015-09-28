@@ -9,14 +9,8 @@ chrome.app.runtime.onLaunched.addListener(function(launchData) {
     'index1.html',
     {
       id: 'mainWindow1',
-      bounds: {width: 800, height: 600}
+      bounds: {width: 800, height: 600},
+      frame: 'none'
     }
   );
-  chrome.app.window.create(
-    'index2.html',
-    {
-      id: 'mainWindow2',
-      bounds: {width: 800, height: 600}
-    }
-  );  
 });
